@@ -1,0 +1,59 @@
+# -----------------------------------------------
+# ⚡️ Powerlevel10k Instant Prompt Configuration
+# -----------------------------------------------
+# This enables fast shell startup by preloading the prompt theme.
+# Keep this near the top of your .zshrc.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Load Powerlevel10k theme
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+
+# Load Powerlevel10k config if it exists
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# -----------------------------------------------
+# 🌱 Zsh Plugins
+# -----------------------------------------------
+# Enable autosuggestions and syntax highlighting
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# -----------------------------------------------
+# 🕘 Zsh History Configuration
+# -----------------------------------------------
+HISTFILE=$HOME/.zhistory         # File to store command history
+SAVEHIST=1000                    # Number of history entries to save
+HISTSIZE=999                     # Number of history entries to keep in memory
+
+setopt share_history             # Share history across all sessions
+setopt hist_expire_dups_first    # Expire duplicate entries first
+setopt hist_ignore_dups          # Ignore duplicate entries
+setopt hist_verify               # Require confirmation before running history expansions
+
+# Arrow key bindings for searching history
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
+# -----------------------------------------------
+# 📂 Eza (modern ls replacement) Aliases
+# -----------------------------------------------
+alias ls="eza --icons=always"
+alias ll="eza -l --icons=always"
+
+# -----------------------------------------------
+# 📁 Zoxide (better cd) Configuration
+# -----------------------------------------------
+eval "$(zoxide init zsh)"
+alias cd="z"  # Optional: replace `cd` with zoxide
+
+# -----------------------------------------------
+# 🔍 FZF (fuzzy finder) Integration
+# -----------------------------------------------
+# Ctrl+R for fuzzy reverse history search
+export FZF_DEFAULT_COMMAND='history'
+bindkey '^R' fzf-history-widget
+
+# Load fzf keybindings and completion
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
