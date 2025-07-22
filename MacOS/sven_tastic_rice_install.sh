@@ -48,6 +48,12 @@ install_if_missing fzf
 install_if_missing bash
 
 # --------------------------
+# CLI Tools
+# --------------------------
+install_if_missing lazygit
+
+
+# --------------------------
 # GUI Apps
 # --------------------------
 install_if_missing firefox cask
@@ -95,13 +101,13 @@ fi
 # Copy dotfiles (assuming dotfiles repo is cloned already)
 # --------------------------
 echo "🔗 Copying dotfiles..."
-
+ß
 DOTFILES_DIR="."  # Change if your dotfiles repo is elsewhere
 
-cp -v "$DOTFILES_DIR/Zshrc/zshrc" ~/.zshrc
-cp -v "$DOTFILES_DIR/WezTerm/wezterm.lua" ~/.wezterm.lua
-cp -v "$DOTFILES_DIR/AeroSpace/aerospace.toml" ~/.aerospace.toml
-cp -v "$DOTFILES_DIR/Tmux/tmux.conf" ~/.tmux.conf
+cp -v "$DOTFILES_DIR/zshrc/zshrc" ~/.zshrc
+cp -v "$DOTFILES_DIR/wezTerm/wezterm.lua" ~/.wezterm.lua
+cp -v "$DOTFILES_DIR/aeroSpace/aerospace.toml" ~/.aerospace.toml
+cp -v "$DOTFILES_DIR/tmux/tmux.conf" ~/.tmux.conf
 
 
 # Add any other config files here

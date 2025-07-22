@@ -23,3 +23,5 @@ brew install bash
 tmux source ~/.tmux.conf
 
 brew install fzf
+
+

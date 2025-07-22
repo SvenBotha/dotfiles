@@ -1,0 +1,3 @@
+[submodule "MacOS/nvim"]
+	path = MacOS/nvim
+	url = git@github.com:SvenBotha/nvim.git
