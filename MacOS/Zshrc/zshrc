@@ -57,3 +57,9 @@ bindkey '^R' fzf-history-widget
 
 # Load fzf keybindings and completion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# -----------------------------------------------
+# Neovim
+# -----------------------------------------------
+alias vim=nvim
+
