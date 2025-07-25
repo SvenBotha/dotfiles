@@ -1,6 +1,8 @@
-# 🍚 Sven's Tastic macOS Setup
+# 🍚 Tastic macOS
 
 A comprehensive macOS development environment setup that gets you from zero to productive in minutes.
+
+![Tastic Rice Preview](./images/preview.png)
 
 ## 🚀 Quick Start
 
